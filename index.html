@@ -148,14 +148,48 @@ function decodeContent(value){
 const libraryData = {
 /* YOUR CODE GOES HERE ALSO DO NOT REMOVE CONST LIBRARY DATA OR THE }; */
   
+"── This is a labeled divider ──": {
+    type: "divider"
+},
 "Read Me!": {
     type: "text",
     content: `Normal text
+that
+Supports multiple lines when you use backticks
 
-Supports multiple lines
+Dont forget to visit <a href="https://gourdier.github.io/directorylibrary/doc.html">the docs</a>!`
+},
+  
+"My Image Page": {
+    type: "slideshow",
+    slides: [
+        { image: "https://cdn.discordapp.com/attachments/1516253058957574216/1516426296190697673/Untitled386_20260616205629.png?ex=6a32998a&is=6a31480a&hm=4149ff8779d7d0040f82dbdb48f06f2fc6904107266f3273b3ab9df67f78ee01&" }
+    ]
+},
 
-Dont forget to visit gourdier.github.io/directorylibrary/doc.html !`
+"This is a foler": {
+    type: "folder",
+    items: {
+        "This is a sub-folder": {
+            type: "folder",
+            items: {
+                "Oh, and this?": {
+                    type: "text",
+                    content: "This is just text"
+                }
+            }
+        }
+    }
+},
+
+"Info": {
+    type: "slideshow",
+    slides: [
+        { text: "Thank you for using this!" },
+        { text: "No nred to credit me, made by gourdier" }
+    ]
 }
+
 
 };
 /* I use these emojis so you can easily spot start and end when scrolling fast */
