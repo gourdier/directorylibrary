@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Docs</title>
+
+<style>
+:root{
+    --bg:#ffffff;
+    --text:#000;
+    --border:#cfcfcf;
+    --hover:#f5f5f5;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:system-ui,sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+header{
+    padding:18px;
+    font-size:1.3rem;
+    font-weight:600;
+    border-bottom:1px solid var(--border);
+}
+
+.section{
+    padding:20px;
+    border-bottom:1px solid var(--border);
+}
+
+h2{
+    margin-bottom:12px;
+    font-size:1.1rem;
+}
+
+pre{
+    margin-top:10px;
+    padding:15px;
+    border:1px solid var(--border);
+    background:white;
+    overflow:auto;
+    white-space:pre-wrap;
+    word-break:break-word;
+}
+
+code{
+    font-family:monospace;
+}
+
+.codeBlock{
+    position:relative;
+    margin-top:10px;
+}
+
+.copyBtn{
+    position:absolute;
+    top:8px;
+    right:8px;
+    font-size:12px;
+    padding:6px 10px;
+    border:1px solid var(--border);
+    background:white;
+    cursor:pointer;
+}
+
+.copyBtn:hover{
+    background:var(--hover);
+}
+
+.note{
+    margin-top:10px;
+    padding:10px;
+    border:1px solid var(--border);
+}
+</style>
+</head>
+
+<body>
+
+<header>Overcooked Gourdy's Directory Library Documentation</header>
+
+<script>
+document.addEventListener("click", e => {
+    if(!e.target.classList.contains("copyBtn")) return;
+
+    const code = e.target.parentElement.querySelector("code").innerText;
+    navigator.clipboard.writeText(code);
+
+    e.target.textContent = "Copied!";
+    setTimeout(() => e.target.textContent = "Copy", 1000);
+});
+</script>
+
+<div class="section">
+<h2>1. Text Page</h2>
+
+<div class="codeBlock">
+<button class="copyBtn">Copy</button>
+<pre><code>
+"My Text Page": {
+    type: "text",
+    content: `Normal text
+
+Supports multiple lines
+
+You can also encode:
+BASE64:SGVsbG8=
+REV:olleH`
+}
+</code></pre>
+</div>
+
+<div class="note">
+Supports <b>"BASE64:___=="</b> encoded text, and <b>"REV:___"</b> reversed text so the ai po po dont catch your doings alongside folder names, image names, dividers, etc. Dont worry, itll cliently decode!
+</div>
+</div>
+
+<div class="section">
+<h2>2. Image Page</h2>
+
+<div class="codeBlock">
+<button class="copyBtn">Copy</button>
+<pre><code>
+"My Image Page": {
+    type: "slideshow",
+    slides: [
+        { image: "https://picsum.photos/800/500" }
+    ]
+}
+</code></pre>
+</div>
+</div>
+
+<div class="section">
+<h2>3. Text Slideshow</h2>
+
+<div class="codeBlock">
+<button class="copyBtn">Copy</button>
+<pre><code>
+"My Text Slideshow": {
+    type: "slideshow",
+    slides: [
+        { text: "Slide 1" },
+        { text: "Slide 2" }
+    ]
+}
+</code></pre>
+</div>
+</div>
+
+<div class="section">
+<h2>4. Image Slideshow</h2>
+
+<div class="codeBlock">
+<button class="copyBtn">Copy</button>
+<pre><code>
+"My Image Slideshow": {
+    type: "slideshow",
+    slides: [
+        { image: "img1.png" },
+        { image: "img2.png" }
+    ]
+}
+</code></pre>
+</div>
+</div>
+
+<div class="section">
+<h2>5. Mixed Slideshow</h2>
+
+<div class="codeBlock">
+<button class="copyBtn">Copy</button>
+<pre><code>
+"My Mixed Slideshow": {
+    type: "slideshow",
+    slides: [
+        { text: "Hello", image: "img.png" },
+        { text: "Only text" }
+    ]
+}
+</code></pre>
+</div>
+</div>
+
+<div class="section">
+<h2>6. Folder</h2>
+
+<div class="codeBlock">
+<button class="copyBtn">Copy</button>
+<pre><code>
+"My Folder": {
+    type: "folder",
+    items: {
+        "Page": {
+            type: "text",
+            content: "Hello world"
+        }
+    }
+}
+</code></pre>
+</div>
+</div>
+
+<div class="section">
+<h2>7. Nested Folder</h2>
+
+<div class="codeBlock">
+<button class="copyBtn">Copy</button>
+<pre><code>
+"Main Folder": {
+    type: "folder",
+    items: {
+        "Sub Folder": {
+            type: "folder",
+            items: {
+                "Deep Page": {
+                    type: "text",
+                    content: "Deep content here"
+                }
+            }
+        }
+    }
+}
+</code></pre>
+</div>
+</div>
+
+<div class="section">
+<h2>8. Dividers</h2>
+
+<div class="codeBlock">
+<button class="copyBtn">Copy</button>
+<pre><code>
+"── MAIN SECTION ──": {
+    type: "divider"
+}
+</code></pre>
+</div>
+
+<div class="note">
+Used to visually separate sections inside folders.
+</div>
+</div>
+
+</body>
+</html>
